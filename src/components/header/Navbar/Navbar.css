@@ -1,0 +1,11 @@
+nav {
+}
+
+nav ul {
+  list-style: none;
+  padding-inline-start: 0px;
+}
+
+nav ul li {
+  cursor: pointer;
+}

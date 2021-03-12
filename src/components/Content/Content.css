@@ -1,0 +1,9 @@
+.Content {
+  width: 100%;
+  height: fit-content;
+  min-height: 100vh;
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

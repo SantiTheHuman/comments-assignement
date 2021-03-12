@@ -10,12 +10,10 @@ export default function Content() {
   useEffect(() => {
     setContent(() => {
       switch (currentPage) {
-        case "Homepage":
-          return <h2>Homepage</h2>;
         case "Comments":
           return <CommentsPage />;
         default:
-          return <h2>Homepage</h2>;
+          return <h2>{currentPage}</h2>;
       }
     });
   }, [currentPage]);

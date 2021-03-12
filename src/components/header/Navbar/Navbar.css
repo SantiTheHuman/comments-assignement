@@ -1,11 +1,54 @@
 nav {
+  height: 100%;
+  padding-bottom: 3px;
+  font-size: 1.5rem;
 }
 
 nav ul {
+  height: 100%;
   list-style: none;
   padding-inline-start: 0px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 nav ul li {
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+  transition: 0.2s;
+}
+nav ul li:hover {
+  color: #030422;
+  background-color: white;
+}
+
+.admin-button {
+  height: 60px;
+  padding: 10px 30px;
+  margin: 10px;
+  border: 2px solid white;
+  border-radius: 7px;
+}
+
+.account-button {
+  height: 55px;
+  width: 55px;
+  padding: 0px;
+  padding-bottom: 3px;
+  margin: 0px 15px;
+  font-size: 2rem;
+  color: #030422;
+  background-color: white;
+  border-radius: 50px;
+}
+.account-button:hover {
+  font-size: 2.2rem;
 }

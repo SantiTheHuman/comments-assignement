@@ -1,39 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { getCommentsData } from "../../services/comments-api";
+import { useComments } from "../../contexts/comments-context";
 import "./CommentsPage.css";
 import Pagination from "./Pagination";
+import CommentsList from "./CommentsList";
 
 export default function CommentsPage() {
-  const [comments, setComments] = useState();
+  const { comments, setComments, commentsPage } = useComments();
 
   const displayComments = async (startNumber) => {
-    const commentsData = await getCommentsData(startNumber);
-
+    const commentsData = await getCommentsData(
+      startNumber === 1 ? 0 : (startNumber - 1) * 12
+    );
     setComments(commentsData);
   };
 
   useEffect(() => {
-    displayComments(0);
-  }, []);
+    displayComments(commentsPage);
+  }, [commentsPage]);
 
   return (
     <div className="CommentsPage">
       <div className="comments-header">
         <h1>Comments</h1>
-        <button onClick={() => console.log(comments)}>Create comment</button>
+        <button onClick={() => console.log(commentsPage)}>
+          Create comment
+        </button>
       </div>
-      <ul className="comments-list">
-        {comments &&
-          comments.map((comment, index) => (
-            <li key={index} className={`c-${index + 1}`}>
-              <div className="comment-top">
-                <h2>{comment.name}</h2>
-                <h3>{comment.email}</h3>
-              </div>
-              <div className="comment-content">{comment.body}</div>
-            </li>
-          ))}
-      </ul>
+      <CommentsList comments={comments} />
       <Pagination />
     </div>
   );

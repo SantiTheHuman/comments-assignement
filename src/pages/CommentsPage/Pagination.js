@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { getNumberOfPages } from "../../services/comments-api";
+import { useComments } from "../../contexts/comments-context";
 import "./Pagination.css";
 
 export default function Pagination() {
+  const { commentsPage, setCommentsPage } = useComments();
   const [paginationButtons, setPaginationButtons] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
   const [lastPage, setLastPage] = useState(null);
 
   const getNumsToDisplay = async (pageNumber, numberOfPages) => {
@@ -49,14 +50,14 @@ export default function Pagination() {
   };
 
   useEffect(() => {
-    displayPagination(currentPage);
-  }, [currentPage]);
+    displayPagination(commentsPage);
+  }, [commentsPage]);
 
   return (
     <ul className="Pagination">
       <li
         onClick={() =>
-          currentPage !== 1 && setCurrentPage((prev) => prev > 1 && prev - 1)
+          commentsPage !== 1 && setCommentsPage((prev) => prev > 1 && prev - 1)
         }
       >
         {"<"}
@@ -64,17 +65,17 @@ export default function Pagination() {
       {paginationButtons &&
         paginationButtons.map((pageNumber, index) => (
           <li
-            onClick={() => setCurrentPage(pageNumber)}
+            onClick={() => setCommentsPage(pageNumber)}
             key={index}
-            className={pageNumber === currentPage ? "active" : ""}
+            className={pageNumber === commentsPage ? "active" : ""}
           >
             {pageNumber}
           </li>
         ))}
       <li
         onClick={() =>
-          currentPage !== lastPage &&
-          setCurrentPage((prev) => {
+          commentsPage !== lastPage &&
+          setCommentsPage((prev) => {
             return prev + 1;
           })
         }

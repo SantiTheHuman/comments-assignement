@@ -1,0 +1,23 @@
+.Pagination {
+  font-size: 1rem;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.Pagination li {
+  padding: 0.8rem;
+  margin: 0 5px;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.active {
+  color: white;
+  background-color: #55acee;
+}

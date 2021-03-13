@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-import {
-  getCommentsData,
-  getNumberOfPages,
-} from "../../services/comments-data";
+import { getCommentsData } from "../../services/comments-api";
 import "./CommentsPage.css";
+import Pagination from "./Pagination";
 
 export default function CommentsPage() {
   const [comments, setComments] = useState();
-  const [pagesList, setPagesList] = useState(0);
 
   const displayComments = async (startNumber) => {
     const commentsData = await getCommentsData(startNumber);
@@ -15,18 +12,8 @@ export default function CommentsPage() {
     setComments(commentsData);
   };
 
-  const displayNumberOfPages = async () => {
-    const number = await getNumberOfPages();
-    let pages = [];
-    for (let i = 0; i < number; i++) {
-      pages.push(i);
-    }
-    setPagesList(pages);
-  };
-
   useEffect(() => {
     displayComments(0);
-    displayNumberOfPages();
   }, []);
 
   return (
@@ -47,10 +34,7 @@ export default function CommentsPage() {
             </li>
           ))}
       </ul>
-      <ul className="comments-bottom">
-        {pagesList &&
-          pagesList.map((pageNum, index) => <li key={index}>{pageNum}</li>)}
-      </ul>
+      <Pagination />
     </div>
   );
 }

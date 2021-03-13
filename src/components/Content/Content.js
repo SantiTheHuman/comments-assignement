@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useNav } from "../../contexts/nav-context";
 import CommentsPage from "../../pages/CommentsPage/CommentsPage";
 import "./Content.css";
 
-export default function Content() {
-  const { currentPage } = useNav();
+export default function Content({ currentPage }) {
   const [content, setContent] = useState();
 
   useEffect(() => {

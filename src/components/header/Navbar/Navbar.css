@@ -1,7 +1,7 @@
 nav {
   height: 100%;
   padding-bottom: 3px;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 nav ul {
@@ -18,7 +18,7 @@ nav ul {
 
 nav ul li {
   height: 100%;
-  padding: 0 20px;
+  padding: 0 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +31,7 @@ nav ul li:hover {
 }
 
 .admin-button {
-  height: 60px;
+  height: 43px;
   padding: 10px 30px;
   margin: 10px;
   border: 2px solid white;
@@ -39,16 +39,16 @@ nav ul li:hover {
 }
 
 .account-button {
-  height: 55px;
-  width: 55px;
+  height: 40px;
+  width: 40px;
   padding: 0px;
   padding-bottom: 3px;
   margin: 0px 15px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #030422;
   background-color: white;
   border-radius: 50px;
 }
 .account-button:hover {
-  font-size: 2.2rem;
+  font-size: 1.7rem;
 }

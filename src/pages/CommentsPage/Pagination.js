@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { getNumberOfPages } from "../../services/comments-api";
-import { useComments } from "../../contexts/comments-context";
 import "./Pagination.css";
 
-export default function Pagination() {
-  const { commentsPage, setCommentsPage } = useComments();
+export default function Pagination({ props }) {
+  const { commentsPage, setCommentsPage } = props;
   const [paginationButtons, setPaginationButtons] = useState([]);
   const [lastPage, setLastPage] = useState(null);
 

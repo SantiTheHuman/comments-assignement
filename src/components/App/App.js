@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useState} from "react";
 import "./App.css";
-import ContextProvider from "../../contexts/index";
 import Header from "../Header/Header";
 import Content from "../Content/Content";
+import { AuthProvider } from "../../contexts/auth-context";
 
 function App() {
+  const [currentPage, setCurrentPage] = useState("Comments");
   return (
     <div className="App">
-      <ContextProvider>
-        <Header />
-        <Content />
-      </ContextProvider>
+      <AuthProvider>
+        <Content currentPage={ currentPage}/>
+        <Header setCurrentPage={ setCurrentPage} />
+      </AuthProvider>
     </div>
   );
 }

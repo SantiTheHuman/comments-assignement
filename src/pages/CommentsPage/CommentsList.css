@@ -1,0 +1,51 @@
+.CommentsList {
+  height: fit-content;
+  width: 100%;
+  list-style: none;
+  margin-block-start: 0em;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 20px;
+}
+
+.CommentsList li {
+  border: 1px solid grey;
+  border-radius: 15px;
+  background-color: #f5fcff;
+}
+
+.c-5,
+.c-6,
+.c-11,
+.c-12 {
+  grid-area: span 1 / span 2;
+}
+
+.comment-top {
+  padding: 10px 15px;
+  border-radius: 15px 15px 0px 0px;
+  background-color: #efefff;
+}
+.comment-top h2 {
+  height: 2rem;
+  font-size: 1.3rem;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  text-transform: capitalize;
+  overflow: hidden;
+}
+.comment-top h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  text-align: right;
+}
+
+.comment-content {
+  padding: 20px;
+  border-radius: 0px 0px 15px 15px;
+}

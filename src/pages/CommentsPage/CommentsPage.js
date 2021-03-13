@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { getCommentsData } from "../../services/comments-api";
-import { useComments } from "../../contexts/comments-context";
 import "./CommentsPage.css";
 import Pagination from "./Pagination";
 import CommentsList from "./CommentsList";
 
 export default function CommentsPage() {
-  const { comments, setComments, commentsPage } = useComments();
+  const [commentsPage, setCommentsPage] = useState(1);
+  const [comments, setComments] = useState(null);
 
   const displayComments = async (startNumber) => {
     const commentsData = await getCommentsData(
@@ -28,7 +28,7 @@ export default function CommentsPage() {
         </button>
       </div>
       <CommentsList comments={comments} />
-      <Pagination />
+      <Pagination props={{ commentsPage, setCommentsPage }} />
     </div>
   );
 }

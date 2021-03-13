@@ -1,11 +1,9 @@
 import React from "react";
 import { useAuth } from "../../../contexts/auth-context";
-import { useNav } from "../../../contexts/nav-context";
 import "./Navbar.css";
 
-export default function NavBar() {
+export default function NavBar({ setCurrentPage }) {
   const { user } = useAuth();
-  const { currentPage, setCurrentPage } = useNav();
   const userInitial = user.charAt(0);
 
   return (

@@ -1,21 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar/Navbar";
 import { useAuth } from "../../contexts/auth-context";
 
 import "./Header.css";
 
 export default function Header({ props }) {
-  const { setCurrentPage } = props;
+  const { currentPage, setCurrentPage } = props;
+  const [showMobileNav, setShowMobileNav] = useState(false);
   const { user } = useAuth();
   const userInitial = user.charAt(0);
 
   return (
     <header>
-      <h1 onClick={() => setCurrentPage("Homepage")}>LiveEO</h1>
-      <Navbar props={props} />
+      <h1
+        onClick={() => {
+          setCurrentPage("Homepage");
+          showMobileNav && setShowMobileNav(false);
+        }}
+      >
+        LiveEO
+      </h1>
+      <Navbar
+        props={{ currentPage, setCurrentPage, showMobileNav, setShowMobileNav }}
+      />
       <button
-        onClick={() => setCurrentPage("Account")}
         className="account-button"
+        onClick={() => {
+          setCurrentPage("Account");
+          showMobileNav && setShowMobileNav(false);
+        }}
       >
         {userInitial}
       </button>

@@ -2,7 +2,7 @@ header {
   height: auto;
   width: 100vw;
   padding: 0 30px;
-  position: absolute;
+  position: fixed;
   top: 0;
   color: white;
   background-color: #030422;
@@ -16,27 +16,36 @@ header h1 {
   height: 60px;
   font-size: 1.2rem;
   font-weight: normal;
+  margin-left: 10px;
+  padding-top: 2px;
+  border-bottom: 4px solid transparent;
   margin-block-start: 0em;
   margin-block-end: 0em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
+  transition: 0.1s;
+}
+header h1:hover {
+  border-bottom: 4px solid white;
 }
 
 .account-button {
   height: 40px;
   width: 40px;
   padding: 0px;
-  padding-bottom: 3px;
   margin: 10px 15px;
   font-size: 1.5rem;
   color: #030422;
   background-color: white;
+  border: none;
   border-radius: 50px;
+  cursor: pointer;
+  transition: 0.1s;
 }
 .account-button:hover {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
 
 .horizontal-line {
@@ -47,4 +56,23 @@ header h1 {
   left: 0;
   background-color: white;
   opacity: 0.5;
+}
+
+@media (max-width: 767px) {
+  .account-button {
+    margin: 10px;
+  }
+}
+@media (max-width: 499px) {
+  header {
+    padding: 0;
+  }
+  .account-button {
+    margin: 10px;
+  }
+}
+@media (min-width: 1280px) {
+  header {
+    padding: 0 60px;
+  }
 }

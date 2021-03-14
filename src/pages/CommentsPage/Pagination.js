@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getNumberOfPages } from "../../services/comments-api";
+import ArrowSVG from "../../assets/ArrowSVG";
 import "./Pagination.css";
 
 export default function Pagination({ props }) {
@@ -55,23 +56,33 @@ export default function Pagination({ props }) {
   return (
     <ul className="Pagination">
       <li
+        className="page-arrow"
         onClick={() =>
           commentsPage !== 1 && setCommentsPage((prev) => prev > 1 && prev - 1)
         }
       >
-        {"<"}
+        <ArrowSVG
+          viewBox={"6 -1 12 24"}
+          fill={"grey"}
+          transform={"rotate(90)"}
+        />
       </li>
       {paginationButtons &&
-        paginationButtons.map((pageNumber, index) => (
-          <li
-            onClick={() => setCommentsPage(pageNumber)}
-            key={index}
-            className={pageNumber === commentsPage ? "active" : ""}
-          >
-            {pageNumber}
-          </li>
-        ))}
+        paginationButtons.map((pageNumber, index) => {
+          return pageNumber === "..." ? (
+            <li>...</li>
+          ) : (
+            <li
+              onClick={() => setCommentsPage(pageNumber)}
+              key={index}
+              className={pageNumber === commentsPage ? "active" : "page-number"}
+            >
+              {pageNumber}
+            </li>
+          );
+        })}
       <li
+        className="page-arrow"
         onClick={() =>
           commentsPage !== lastPage &&
           setCommentsPage((prev) => {
@@ -79,7 +90,11 @@ export default function Pagination({ props }) {
           })
         }
       >
-        {">"}
+        <ArrowSVG
+          viewBox={"6 -1 12 24"}
+          fill={"grey"}
+          transform={"rotate(270)"}
+        />
       </li>
     </ul>
   );

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { getCommentsData } from "../../services/comments-api";
-import "./CommentsPage.css";
+import "./Comments.css";
 import Pagination from "./Pagination";
-import CommentsList from "./CommentsList";
+import CommentsList from "./CommentsGrid";
 
-export default function CommentsPage() {
+export default function Comments() {
   const [commentsPage, setCommentsPage] = useState(1);
   const [comments, setComments] = useState(null);
   const [selectedComment, setSelectedComment] = useState(null);
@@ -21,7 +21,7 @@ export default function CommentsPage() {
   }, [commentsPage]);
 
   return (
-    <div className="CommentsPage">
+    <div className="Comments">
       <div className="comments-header">
         <h1>Comments</h1>
         <button onClick={() => console.log(commentsPage)}>

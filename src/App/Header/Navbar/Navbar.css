@@ -20,21 +20,25 @@ nav ul {
   transition: 0.5s;
 }
 
-nav ul li {
+nav ul li a {
   height: 53px;
   padding: 0 15px;
+  color: white;
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: 0.1s;
 }
-nav ul li:hover:not(.mobile-nav-btn) {
+nav ul li a:hover {
   color: #030422;
   background-color: white;
 }
 
-.admin-button {
+
+
+.admin-button a {
   height: 43px;
   padding: 10px 30px;
   margin: 10px;
@@ -42,7 +46,7 @@ nav ul li:hover:not(.mobile-nav-btn) {
   border-radius: 7px;
 }
 
-.active-page {
+.active-page a {
   color: #030422;
   background-color: white;
 }

@@ -13,21 +13,27 @@ header {
 }
 
 header h1 {
-  height: 60px;
   font-size: 1.2rem;
   font-weight: normal;
   margin-left: 10px;
-  padding-top: 2px;
-  border-bottom: 4px solid transparent;
   margin-block-start: 0em;
   margin-block-end: 0em;
-  display: flex;
+  
+}
+header h1 a {
+  height: 60px;
+  color: white;
+text-decoration: none;
+padding-top: 2px;
+border-bottom: 4px solid transparent;
+display: flex;
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
   transition: 0.1s;
 }
-header h1:hover {
+
+header h1 a:hover {
   border-bottom: 4px solid white;
 }
 

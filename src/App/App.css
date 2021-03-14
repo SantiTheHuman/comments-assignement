@@ -1,4 +1,9 @@
-.Content {
+.App {
+  width: 100%;
+  height: fit-content;
+}
+
+.Routes {
   width: 100%;
   height: fit-content;
   min-height: 100vh;

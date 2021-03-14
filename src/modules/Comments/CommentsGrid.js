@@ -1,9 +1,9 @@
 import React from "react";
-import "./CommentsList.css";
+import "./CommentsGrid.css";
 
-export default function CommentsList({ comments, setSelectedComment }) {
+export default function CommentsGrid({ comments, setSelectedComment }) {
   return (
-    <ul className="CommentsList">
+    <ul className="CommentsGrid">
       {comments &&
         comments.map((comment, index) => (
           <li

@@ -1,12 +1,19 @@
 import React from "react";
 import "./CommentsList.css";
 
-export default function CommentsList({ comments }) {
+export default function CommentsList({ comments, setSelectedComment }) {
   return (
     <ul className="CommentsList">
       {comments &&
         comments.map((comment, index) => (
-          <li key={index} className={`c-${index + 1}`}>
+          <li
+            key={index}
+            className={`c-${index + 1}`}
+            onClick={() => {
+              setSelectedComment(comment);
+              console.log(index);
+            }}
+          >
             <div className="comment-top">
               <h2>{comment.name}</h2>
               <h3>{comment.email}</h3>

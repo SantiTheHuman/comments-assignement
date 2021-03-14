@@ -10,7 +10,7 @@
 }
 
 .CommentsList li {
-  max-width: 100%;
+  width: 100%;
   border-radius: 15px;
   background-color: #f5fcff;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
@@ -47,6 +47,55 @@
 .comment-content {
   padding: 10px 15px 20px 15px;
   border-radius: 0px 0px 15px 15px;
+  background-color: #f5fcff;
+}
+
+.modal {
+  height: 100%;
+  width: 100%;
+  padding: 15% 30%;
+  position: fixed;
+  background-color: #ffffffce;
+  transition: 0.2s;
+}
+.open-modal {
+  opacity: 1;
+}
+.hidden-modal {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal-comment {
+  border-radius: 15px;
+  box-shadow: 2px 6px 26px rgba(0, 0, 0, 0.3);
+}
+.comment-options {
+  height: 50px;
+  width: 100%;
+  list-style: none;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+  border-radius: 0px 0px 15px 15px;
+  background-color: #f5fcff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.comment-options li {
+  height: 100%;
+  padding-top: 7px;
+  font-weight: 500;
+  text-align: center;
+  border-top: 5px solid transparent;
+  color: rgba(0, 0, 0, 0.644);
+  flex: 1 1 auto;
+  cursor: pointer;
+}
+.comment-options li:hover {
+  color: black;
+  border-top: 5px solid #efefff;
 }
 
 @media (min-width: 500px) {

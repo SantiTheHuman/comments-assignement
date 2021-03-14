@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Header from "../Header/Header";
 import Content from "../Content/Content";
@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="App">
       <AuthProvider>
-        <Content currentPage={ currentPage}/>
-        <Header setCurrentPage={ setCurrentPage} />
+        <Content currentPage={currentPage} />
+        <Header props={{ currentPage, setCurrentPage }} />
       </AuthProvider>
     </div>
   );

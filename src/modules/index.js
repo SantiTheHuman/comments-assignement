@@ -1,5 +1,5 @@
 import Comments from "./Comments";
-//~~ All modules would be imported here
+//~~ All real modules would be imported here
 
 const modules = [
   {

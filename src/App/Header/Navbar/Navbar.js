@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import ArrowSVG from "../../../assets/ArrowSVG";
+import ArrowSVG from "../assets/ArrowSVG";
 import "./Navbar.css";
 
 export default function NavBar({ props }) {

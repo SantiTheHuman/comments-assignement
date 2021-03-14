@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { getNumberOfPages } from "../../services/comments-api";
-import ArrowSVG from "../../assets/ArrowSVG";
+import { getNumberOfPages } from "../api/comments-api";
+import ArrowSVG from "../assets/ArrowSVG";
 import "./Pagination.css";
 
 export default function Pagination({ props }) {

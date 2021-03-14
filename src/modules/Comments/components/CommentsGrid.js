@@ -11,7 +11,6 @@ export default function CommentsGrid({ comments, setSelectedComment }) {
             className={`c-${index + 1}`}
             onClick={() => {
               setSelectedComment(comment);
-              console.log(index);
             }}
           >
             <div className="comment-top">

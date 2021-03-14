@@ -1,10 +1,10 @@
 import React from "react";
-import Comments from "./Comments";
+import CommentsModule from "./Container";
 
 export default {
   routeProps: {
     path: "/Comments",
-    component: () => <Comments />,
+    component: () => <CommentsModule />,
   },
   name: "Comments",
 };

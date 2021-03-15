@@ -14,18 +14,18 @@ export default function NavBar({ props }) {
 
   return (
     <nav className={!showMobileNav && "hide-mobile-nav"}>
+      <button
+        onClick={() => setShowMobileNav((prev) => !prev)}
+        className="mobile-nav-btn"
+      >
+        {currentModule}
+        <ArrowSVG
+          viewBox={"0 0 24 24"}
+          fill={"white"}
+          transform={showMobileNav ? "rotate(180)" : "rotate(0)"}
+        />
+      </button>
       <ul className={!showMobileNav && "hide-mobile-nav-ul"}>
-        <li
-          onClick={() => setShowMobileNav((prev) => !prev)}
-          className="mobile-nav-btn"
-        >
-          {currentModule}
-          <ArrowSVG
-            viewBox={"0 0 24 24"}
-            fill={"white"}
-            transform={showMobileNav ? "rotate(180)" : "rotate(0)"}
-          />
-        </li>
         {modules &&
           modules.map((module) => (
             <li

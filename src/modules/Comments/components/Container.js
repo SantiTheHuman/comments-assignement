@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { getCommentsData } from "./api/comments-api";
-import "./Container.css";
-import Pagination from "./components/Pagination";
-import CommentsGrid from "./components/CommentsGrid";
-import Modal from "./components/Modal";
+import { getCommentsData } from "../api/comments-api";
+import CommentsGrid from "./CommentsGrid";
+import CreateComment from "./CreateComment";
+import Pagination from "./Pagination";
+import Modal from "./Modal";
+import "../styles/Container.css";
 
-export default function CommentsModule() {
-  const [commentsPage, setCommentsPage] = useState(1);
+export default function Container() {
   const [comments, setComments] = useState(null);
+  const [commentsPage, setCommentsPage] = useState(1);
   const [modalContent, setModalContent] = useState(null);
 
   const displayComments = async (startNumber) => {
@@ -25,7 +26,11 @@ export default function CommentsModule() {
     <div className="Container">
       <div className="comments-header">
         <h1>Comments</h1>
-        <button onClick={() => console.log(commentsPage)}>
+        <button
+          onClick={() =>
+            setModalContent(<CreateComment setModalContent={setModalContent} />)
+          }
+        >
           Create comment
         </button>
       </div>

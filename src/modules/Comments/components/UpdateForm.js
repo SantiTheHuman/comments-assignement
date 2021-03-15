@@ -1,5 +1,6 @@
 import React from "react";
 import { updateComment } from "../api/comments-api";
+import "../styles/UpdateForm.css";
 
 export default function UpdateForm({ comment, setModalContent }) {
   const { name, email, body } = comment;

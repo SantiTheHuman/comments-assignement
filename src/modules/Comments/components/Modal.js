@@ -1,6 +1,6 @@
 import React from "react";
-import "./Modal.css";
 import CloseIconSVG from "../assets/CloseIconSVG";
+import "../styles/Modal.css";
 
 export default function Modal({ props }) {
   const { modalContent, setModalContent } = props;
@@ -8,7 +8,7 @@ export default function Modal({ props }) {
   return (
     <div className={`modal ${modalContent ? "open-modal" : "hidden-modal"}`}>
       {modalContent && (
-        <div className="modal-box">
+        <div className="modal-wrap">
           <button
             className="close-modal"
             onClick={() => {

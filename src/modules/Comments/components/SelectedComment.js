@@ -1,6 +1,7 @@
 import React from "react";
 import { deleteComment } from "../api/comments-api";
 import UpdateForm from "./UpdateForm";
+import "../styles/SelectedComment.css";
 
 export default function SelectedComment({ comment, setModalContent }) {
   return (
@@ -25,7 +26,7 @@ export default function SelectedComment({ comment, setModalContent }) {
             deleteComment(comment.id).then((res) =>
               setModalContent(
                 res ? (
-                  <h2 className="result-message">Message deleted</h2>
+                  <h2 className="result-message">Comment deleted</h2>
                 ) : (
                   <h2 className="result-message">Error</h2>
                 )

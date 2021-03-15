@@ -17,22 +17,18 @@ export const getNumberOfPages = async () => {
 };
 
 export const createComment = async (data) => {
-  const { commentId, name, email, body } = data;
-  const response = await fetch(
-    `http://jsonplaceholder.typicode.com/comments/${commentId}`,
-    {
-      method: "PUT",
-      body: JSON.stringify({
-        id: commentId,
-        name: name,
-        email: email,
-        body: body,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    }
-  ).then((res) => res.json());
+  const { name, email, body } = data;
+  const response = await fetch(`http://jsonplaceholder.typicode.com/comments`, {
+    method: "POST",
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      body: body,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  }).then((res) => res.json());
   return response;
 };
 

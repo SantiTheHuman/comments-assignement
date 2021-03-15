@@ -1,5 +1,5 @@
 import React from "react";
-import "./CommentsGrid.css";
+import "../styles/CommentsGrid.css";
 import SelectedComment from "./SelectedComment";
 
 export default function CommentsGrid({ comments, setModalContent }) {

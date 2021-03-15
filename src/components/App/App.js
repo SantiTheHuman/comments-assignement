@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import "./App.css";
-import Header from "./Header/Header";
+import { AuthProvider } from "../../contexts/auth-context";
+import Header from "../Header/Header";
 import Routes from "./Routes";
-import { AuthProvider } from "../contexts/auth-context";
-import modules from "../modules";
+import modules from "../../modules";
+import "./App.css";
 
 function App() {
   const [currentModule, setCurrentModule] = useState("Comments");

@@ -1,41 +1,35 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-
-import Navbar from "./Navbar/Navbar";
 import { useAuth } from "../../contexts/auth-context";
-
+import Navbar from "../Navbar/Navbar";
 import "./Header.css";
 
 export default function Header({ props }) {
   const { modules, currentModule, setCurrentModule } = props;
-  const [showMobileNav, setShowMobileNav] = useState(false);
   const { user } = useAuth();
   const userInitial = user.charAt(0);
+  const [showMobileNav, setShowMobileNav] = useState(false);
+
+  const forNavbar = {
+    modules,
+    currentModule,
+    setCurrentModule,
+    showMobileNav,
+    setShowMobileNav,
+  };
 
   return (
     <header>
-      <h1>
-        <Link
-          to="/Homepage"
-          onClick={() => {
-            console.log("hi");
-            setCurrentModule("Homepage");
-            showMobileNav && setShowMobileNav(false);
-          }}
-        >
-          LiveEO
-        </Link>
-      </h1>
-      <Navbar
-        props={{
-          modules,
-          currentModule,
-          setCurrentModule,
-          showMobileNav,
-          setShowMobileNav,
+      <Link
+        to="/Homepage"
+        onClick={() => {
+          setCurrentModule("Homepage");
+          showMobileNav && setShowMobileNav(false);
         }}
-      />
-
+      >
+        <h1>LiveEO</h1>
+      </Link>
+      <Navbar props={forNavbar} />
       <Link
         to="/Account"
         onClick={() => {

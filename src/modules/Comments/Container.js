@@ -3,12 +3,12 @@ import { getCommentsData } from "./api/comments-api";
 import "./Container.css";
 import Pagination from "./components/Pagination";
 import CommentsGrid from "./components/CommentsGrid";
-import CommentModal from "./components/CommentModal";
+import Modal from "./components/Modal";
 
 export default function CommentsModule() {
   const [commentsPage, setCommentsPage] = useState(1);
   const [comments, setComments] = useState(null);
-  const [selectedComment, setSelectedComment] = useState(null);
+  const [modalContent, setModalContent] = useState(null);
 
   const displayComments = async (startNumber) => {
     const commentsData = await getCommentsData(
@@ -29,11 +29,8 @@ export default function CommentsModule() {
           Create comment
         </button>
       </div>
-      <CommentsGrid
-        comments={comments}
-        setSelectedComment={setSelectedComment}
-      />
-      <CommentModal props={{ selectedComment, setSelectedComment }} />
+      <CommentsGrid comments={comments} setModalContent={setModalContent} />
+      <Modal props={{ modalContent, setModalContent }} />
       <Pagination props={{ commentsPage, setCommentsPage }} />
     </div>
   );

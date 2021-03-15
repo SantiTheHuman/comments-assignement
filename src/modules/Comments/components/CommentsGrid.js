@@ -1,7 +1,8 @@
 import React from "react";
 import "./CommentsGrid.css";
+import SelectedComment from "./SelectedComment";
 
-export default function CommentsGrid({ comments, setSelectedComment }) {
+export default function CommentsGrid({ comments, setModalContent }) {
   return (
     <ul className="CommentsGrid">
       {comments &&
@@ -10,7 +11,12 @@ export default function CommentsGrid({ comments, setSelectedComment }) {
             key={index}
             className={`c-${index + 1}`}
             onClick={() => {
-              setSelectedComment(comment);
+              setModalContent(
+                <SelectedComment
+                  comment={comment}
+                  setModalContent={setModalContent}
+                />
+              );
             }}
           >
             <div className="comment-top">

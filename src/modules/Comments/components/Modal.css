@@ -1,10 +1,13 @@
 .modal {
-    height: 100%;
-    width: 100%;
-    padding: 15% 30%;
-    position: fixed;
-    background-color: #ffffffce;
-    transition: 0.2s;
+  height: 100vh;
+  width: 100vw;
+  background-color: #ffffffce;
+  position: fixed;
+  transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .open-modal {
     opacity: 1;
@@ -13,7 +16,49 @@
     opacity: 0;
     pointer-events: none;
   }
-  .modal-comment {
+  
+  .modal-box {
+    height: fit-content;
+    width: fit-content;
+    margin-top: -10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    position: relative;
+    z-index: 1;
+  }
+
+  .close-modal {
+    margin: 0;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    opacity: 0.6;
+    cursor: pointer;
+  }
+  .close-modal:hover {
+    opacity: 1;
+  }
+
+  .modal-background {
+    height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  }
+
+  .result-message {
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #f5fcff;
+    box-shadow: 2px 6px 26px rgba(0, 0, 0, 0.3);
+  }
+
+  .SelectedComment {
+    max-width: 600px;
+    margin: 0 20px;
     border-radius: 15px;
     box-shadow: 2px 6px 26px rgba(0, 0, 0, 0.3);
   }
@@ -46,17 +91,6 @@
     border-top: 5px solid #efefff;
   }
 
-  .close-modal {
-    margin-left: 100%;
-    border: none;
-    background-color: transparent;
-    opacity: 0.6;
-    cursor: pointer;
-  }
-  .close-modal:hover {
-    opacity: 1;
-  }
-
 
   .result-window {
     height: fit-content;
@@ -70,19 +104,23 @@
     justify-content: center;
   }
 
-  .result-window form {
-    width: 50%;
-    margin: 30px;
+  .UpdateForm {
+    width: 500px;
+    max-width: 90vw;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #f5fcff;
+    box-shadow: 2px 6px 26px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
   }
-  .result-window form label {
+  .UpdateForm label {
     margin: 20px 0px 10px 0px;
   }
-  .result-window form textarea {
+  .UpdateForm textarea {
     height: 80px;
   }
-  .result-window form button {
+  .UpdateForm button {
     margin: 30px;
     padding: 10px;
   }
